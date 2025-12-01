@@ -1,5 +1,5 @@
 python IDM_dump/split_video_instruction.py \
-    --source_dir "" \
+    --source_dir "/home/iit.local/mtiezzi/Projects/inProgress/cosmos-predict2/output/dream_gen_benchmark/cosmos_predict2_14b_gr1_object" \
     --output_dir "IDM_dump/data/gr1_data"
 
 python IDM_dump/preprocess_video.py \
