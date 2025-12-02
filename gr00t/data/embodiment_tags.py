@@ -46,3 +46,8 @@ class EmbodimentTag(Enum):
     """
     Any new embodiment for finetuning.
     """
+
+    ERGOCUB = "ergocub"
+    """
+    Any new embodiment for finetuning.
+    """
