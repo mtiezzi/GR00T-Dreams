@@ -1,0 +1,48 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Python: IDM Training (gr00t env)",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/scripts/idm_training.py",
+      "console": "integratedTerminal",
+      "justMyCode": false,
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}"
+      },
+      "args": [
+        // "--dataset-path", "${workspaceFolder}/demo_data/xbg_lerobot_hd/",
+        "--dataset-path", "${workspaceFolder}/demo_data/xbg_lerobot_copy_ral/",
+        "--embodiment_tag", "new_embodiment",
+        "--data_config", "ergocub_full_body",
+        "--video_backend", "torchvision_av"
+      ],
+      "cwd": "${workspaceFolder}",
+      "pythonPath": "/home/iit.local/mtiezzi/miniforge3/envs/gr00t/bin/python"
+    },
+    {
+      "name": "Python: Current File (gr00t env)",
+      "type": "python",
+      "request": "launch",
+      "program": "${file}",
+      "console": "integratedTerminal",
+      "justMyCode": true,
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}"
+      },
+      "cwd": "${workspaceFolder}",
+      "pythonPath": "/home/iit.local/mtiezzi/miniforge3/envs/gr00t/bin/python"
+    },
+    {
+      "name": "Python: Attach (pick process)",
+      "type": "python",
+      "request": "attach",
+      "processId": "${command:pickProcess}",
+      "justMyCode": false,
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}"
+      }
+    }
+  ]
+}
