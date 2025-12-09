@@ -335,7 +335,13 @@ class LeRobotSingleDataset(Dataset):
                         state_action_meta.end,
                     )
                     stat = np.array(le_statistics[le_modality][stat_name])
-                    dataset_statistics[our_modality][subkey][stat_name] = stat[indices].tolist()
+                    try:
+                        dataset_statistics[our_modality][subkey][stat_name] = stat[indices].tolist()
+                    except IndexError:
+                        raise IndexError(
+                            f"Failed to get statistics for {our_modality}.{subkey} from {le_modality}: "
+                            f"stat shape {stat.shape}, indices {indices}"
+                        )
 
         # 3. Full dataset metadata
         metadata = DatasetMetadata(

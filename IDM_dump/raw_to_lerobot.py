@@ -463,6 +463,8 @@ def main():
         args.annotation_source = "language.language_instruction"
     elif args.embodiment == "so100":
         args.annotation_source = "human.task_description"
+    elif args.embodiment == "ergocub":
+        args.annotation_source = "human.coarse_action"
     
     if args.recursive:
         # Process a single folder (original behavior)
@@ -498,6 +500,8 @@ def main():
         source_dir = "IDM_dump/global_metadata/franka"
     elif args.embodiment == "so100":
         source_dir = "IDM_dump/global_metadata/so100"
+    elif args.embodiment == "ergocub":
+        source_dir = "IDM_dump/global_metadata/ergocub"
     
     # copy modality.json
     shutil.copy(source_dir + "/modality.json", args.output_dir + "/meta/modality.json")
