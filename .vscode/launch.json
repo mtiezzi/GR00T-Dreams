@@ -16,7 +16,8 @@
         "--dataset-path", "${workspaceFolder}/demo_data/xbg_lerobot_copy_ral/",
         "--embodiment_tag", "new_embodiment",
         "--data_config", "ergocub_full_body",
-        "--video_backend", "torchvision_av"
+        "--video_backend", "torchvision_av",
+        "--output_dir", "checkpoints_idm",
       ],
       "cwd": "${workspaceFolder}",
       "pythonPath": "/home/iit.local/mtiezzi/miniforge3/envs/gr00t/bin/python"
@@ -43,6 +44,26 @@
       "env": {
         "PYTHONPATH": "${workspaceFolder}"
       }
+    },
+    {
+      "name": "Python: Dump IDM Actions (gr00t env)",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/IDM_dump/dump_idm_actions.py",
+      "console": "integratedTerminal",
+      "justMyCode": false,
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}"
+      },
+      "args": [
+        "--checkpoint", "${workspaceFolder}/checkpoints_idm/checkpoint-10000",
+        "--dataset", "${workspaceFolder}/IDM_dump/data/ergocub.data",
+        "--output_dir", "${workspaceFolder}/IDM_dump/data/ergocub_unified.data_idm",
+        "--num_gpus", "1",
+        "--video_indices", "0 8"
+      ],
+      "cwd": "${workspaceFolder}",
+      "pythonPath": "/home/iit.local/mtiezzi/miniforge3/envs/gr00t/bin/python"
     }
   ]
 }

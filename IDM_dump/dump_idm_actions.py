@@ -45,10 +45,10 @@ def load_dataset_and_config(checkpoint_path, validation_dataset_path, video_indi
     
     cfg = OmegaConf.create(config)
 
+    print(f"Loading dataset from: {validation_dataset_path}")
     dataset_name = os.path.basename(validation_dataset_path).split(".")[0]
     embodiment = dataset_name
     print(f"Dataset name: {dataset_name}")
-
     modality_configs = cfg["modality_configs"][embodiment]
     if video_indices is not None:
         video_delta_indices = video_indices.split(" ")
@@ -83,6 +83,8 @@ def load_dataset_and_config(checkpoint_path, validation_dataset_path, video_indi
         embodiment_tag = EmbodimentTag.SO100
     elif "robocasa" in embodiment:
         embodiment_tag = EmbodimentTag.ROBOCASA
+    elif "ergocub" in embodiment:
+        embodiment_tag = EmbodimentTag.ERGOCUB
     else:
         raise ValueError(f"Unknown embodiment: {embodiment}")
 
@@ -462,6 +464,8 @@ if __name__ == "__main__":
     )
 
     args = parser.parse_args()
+
+    print(f"Dataset name: {args.dataset}")
 
     result = validate_checkpoint(
         checkpoint_path=args.checkpoint,

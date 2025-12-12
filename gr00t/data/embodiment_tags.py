@@ -49,5 +49,5 @@ class EmbodimentTag(Enum):
 
     ERGOCUB = "ergocub"
     """
-    Any new embodiment for finetuning.
+    The ergoCub embodiment.
     """

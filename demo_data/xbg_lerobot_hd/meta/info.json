@@ -1,0 +1,270 @@
+{
+    "codebase_version": "v3.0",
+    "robot_type": "ergoCub",
+    "total_episodes": 10,
+    "total_frames": 63330,
+    "total_tasks": 13,
+    "chunks_size": 1000,
+    "data_files_size_in_mb": 100,
+    "video_files_size_in_mb": 200,
+    "fps": 30,
+    "splits": {
+        "train": "0:10"
+    },
+    "data_path": "data/chunk-{chunk_index:03d}/file-{file_index:03d}.parquet",
+    "video_path": "videos/{video_key}/chunk-{chunk_index:03d}/file-{file_index:03d}.mp4",
+    "features": {
+        "observation.state": {
+            "dtype": "float32",
+            "shape": [
+                83
+            ],
+            "names": [
+                "/velocities/neck_pitch",
+                "/velocities/neck_roll",
+                "/velocities/neck_yaw",
+                "/velocities/camera_tilt",
+                "/velocities/torso_pitch",
+                "/velocities/torso_roll",
+                "/velocities/torso_yaw",
+                "/velocities/l_shoulder_pitch",
+                "/velocities/l_shoulder_roll",
+                "/velocities/l_shoulder_yaw",
+                "/velocities/l_elbow",
+                "/velocities/l_wrist_roll",
+                "/velocities/l_wrist_pitch",
+                "/velocities/l_wrist_yaw",
+                "/velocities/l_thumb_add",
+                "/velocities/l_thumb_oc",
+                "/velocities/l_index_oc",
+                "/velocities/l_middle_oc",
+                "/velocities/l_ring_pinky_oc",
+                "/velocities/r_shoulder_pitch",
+                "/velocities/r_shoulder_roll",
+                "/velocities/r_shoulder_yaw",
+                "/velocities/r_elbow",
+                "/velocities/r_wrist_roll",
+                "/velocities/r_wrist_pitch",
+                "/velocities/r_wrist_yaw",
+                "/velocities/r_thumb_add",
+                "/velocities/r_thumb_oc",
+                "/velocities/r_index_oc",
+                "/velocities/r_middle_oc",
+                "/velocities/r_ring_pinky_oc",
+                "/positions/neck_pitch",
+                "/positions/neck_roll",
+                "/positions/neck_yaw",
+                "/positions/camera_tilt",
+                "/positions/torso_pitch",
+                "/positions/torso_roll",
+                "/positions/torso_yaw",
+                "/positions/l_shoulder_pitch",
+                "/positions/l_shoulder_roll",
+                "/positions/l_shoulder_yaw",
+                "/positions/l_elbow",
+                "/positions/l_wrist_roll",
+                "/positions/l_wrist_pitch",
+                "/positions/l_wrist_yaw",
+                "/positions/l_thumb_add",
+                "/positions/l_thumb_oc",
+                "/positions/l_index_oc",
+                "/positions/l_middle_oc",
+                "/positions/l_ring_pinky_oc",
+                "/positions/r_shoulder_pitch",
+                "/positions/r_shoulder_roll",
+                "/positions/r_shoulder_yaw",
+                "/positions/r_elbow",
+                "/positions/r_wrist_roll",
+                "/positions/r_wrist_pitch",
+                "/positions/r_wrist_yaw",
+                "/positions/r_thumb_add",
+                "/positions/r_thumb_oc",
+                "/positions/r_index_oc",
+                "/positions/r_middle_oc",
+                "/positions/r_ring_pinky_oc",
+                "/currents/l_shoulder_pitch",
+                "/currents/l_shoulder_roll",
+                "/currents/l_shoulder_yaw",
+                "/currents/l_elbow",
+                "/currents/l_thumb_add",
+                "/currents/l_thumb_oc",
+                "/currents/l_index_oc",
+                "/currents/l_middle_oc",
+                "/currents/l_ring_pinky_oc",
+                "/currents/r_shoulder_pitch",
+                "/currents/r_shoulder_roll",
+                "/currents/r_shoulder_yaw",
+                "/currents/r_elbow",
+                "/currents/r_thumb_add",
+                "/currents/r_thumb_oc",
+                "/currents/r_index_oc",
+                "/currents/r_middle_oc",
+                "/currents/r_ring_pinky_oc",
+                "/joypad/element_0",
+                "/joypad/element_1",
+                "/joypad/element_2"
+            ]
+        },
+        "observation.images.rgb": {
+            "dtype": "video",
+            "shape": [
+                480,
+                640,
+                3
+            ],
+            "names": [
+                "height",
+                "width",
+                "channels"
+            ],
+            "info": {
+                "video.height": 480,
+                "video.width": 640,
+                "video.codec": "av1",
+                "video.pix_fmt": "yuv420p",
+                "video.is_depth_map": false,
+                "video.fps": 30,
+                "video.channels": 3,
+                "has_audio": false
+            }
+        },
+        "action": {
+            "dtype": "float32",
+            "shape": [
+                83
+            ],
+            "names": [
+                "/velocities/neck_pitch",
+                "/velocities/neck_roll",
+                "/velocities/neck_yaw",
+                "/velocities/camera_tilt",
+                "/velocities/torso_pitch",
+                "/velocities/torso_roll",
+                "/velocities/torso_yaw",
+                "/velocities/l_shoulder_pitch",
+                "/velocities/l_shoulder_roll",
+                "/velocities/l_shoulder_yaw",
+                "/velocities/l_elbow",
+                "/velocities/l_wrist_roll",
+                "/velocities/l_wrist_pitch",
+                "/velocities/l_wrist_yaw",
+                "/velocities/l_thumb_add",
+                "/velocities/l_thumb_oc",
+                "/velocities/l_index_oc",
+                "/velocities/l_middle_oc",
+                "/velocities/l_ring_pinky_oc",
+                "/velocities/r_shoulder_pitch",
+                "/velocities/r_shoulder_roll",
+                "/velocities/r_shoulder_yaw",
+                "/velocities/r_elbow",
+                "/velocities/r_wrist_roll",
+                "/velocities/r_wrist_pitch",
+                "/velocities/r_wrist_yaw",
+                "/velocities/r_thumb_add",
+                "/velocities/r_thumb_oc",
+                "/velocities/r_index_oc",
+                "/velocities/r_middle_oc",
+                "/velocities/r_ring_pinky_oc",
+                "/positions/neck_pitch",
+                "/positions/neck_roll",
+                "/positions/neck_yaw",
+                "/positions/camera_tilt",
+                "/positions/torso_pitch",
+                "/positions/torso_roll",
+                "/positions/torso_yaw",
+                "/positions/l_shoulder_pitch",
+                "/positions/l_shoulder_roll",
+                "/positions/l_shoulder_yaw",
+                "/positions/l_elbow",
+                "/positions/l_wrist_roll",
+                "/positions/l_wrist_pitch",
+                "/positions/l_wrist_yaw",
+                "/positions/l_thumb_add",
+                "/positions/l_thumb_oc",
+                "/positions/l_index_oc",
+                "/positions/l_middle_oc",
+                "/positions/l_ring_pinky_oc",
+                "/positions/r_shoulder_pitch",
+                "/positions/r_shoulder_roll",
+                "/positions/r_shoulder_yaw",
+                "/positions/r_elbow",
+                "/positions/r_wrist_roll",
+                "/positions/r_wrist_pitch",
+                "/positions/r_wrist_yaw",
+                "/positions/r_thumb_add",
+                "/positions/r_thumb_oc",
+                "/positions/r_index_oc",
+                "/positions/r_middle_oc",
+                "/positions/r_ring_pinky_oc",
+                "/currents/l_shoulder_pitch",
+                "/currents/l_shoulder_roll",
+                "/currents/l_shoulder_yaw",
+                "/currents/l_elbow",
+                "/currents/l_thumb_add",
+                "/currents/l_thumb_oc",
+                "/currents/l_index_oc",
+                "/currents/l_middle_oc",
+                "/currents/l_ring_pinky_oc",
+                "/currents/r_shoulder_pitch",
+                "/currents/r_shoulder_roll",
+                "/currents/r_shoulder_yaw",
+                "/currents/r_elbow",
+                "/currents/r_thumb_add",
+                "/currents/r_thumb_oc",
+                "/currents/r_index_oc",
+                "/currents/r_middle_oc",
+                "/currents/r_ring_pinky_oc",
+                "/joypad/element_0",
+                "/joypad/element_1",
+                "/joypad/element_2"
+            ]
+        },
+        "annotation.human.action.task_description": {
+            "dtype": "int64",
+            "shape": [
+                1
+            ]
+        },
+        "annotation.human.validity": {
+            "dtype": "int64",
+            "shape": [
+                1
+            ]
+        },
+        "timestamp": {
+            "dtype": "float32",
+            "shape": [
+                1
+            ],
+            "names": null
+        },
+        "frame_index": {
+            "dtype": "int64",
+            "shape": [
+                1
+            ],
+            "names": null
+        },
+        "episode_index": {
+            "dtype": "int64",
+            "shape": [
+                1
+            ],
+            "names": null
+        },
+        "index": {
+            "dtype": "int64",
+            "shape": [
+                1
+            ],
+            "names": null
+        },
+        "task_index": {
+            "dtype": "int64",
+            "shape": [
+                1
+            ],
+            "names": null
+        }
+    }
+}
