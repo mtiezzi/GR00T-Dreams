@@ -254,6 +254,8 @@ def convert_raw_to_lerobot(
     
     
     for chunk_idx, chunk_results in enumerate(all_results):
+        state_len = 83
+
         for video_id, annotation, frame_count in tqdm(
             chunk_results,
             desc=f"Processing chunk {chunk_idx + 1}/{len(all_results)}",
@@ -270,8 +272,8 @@ def convert_raw_to_lerobot(
             
             # Create episode data
             episode_data = {
-                "observation.state": [np.zeros(44, dtype=np.float32)] * actual_frame_count,
-                "action": [np.zeros(44, dtype=np.float32)] * actual_frame_count,
+                "observation.state": [np.zeros(state_len, dtype=np.float32)] * actual_frame_count,
+                "action": [np.zeros(state_len, dtype=np.float32)] * actual_frame_count,
                 "timestamp": [i/actual_fps for i in range(actual_frame_count)],
                 "episode_index": [episode_index] * actual_frame_count,
                 "index": np.arange(total_frames, total_frames + actual_frame_count),
@@ -349,13 +351,13 @@ def convert_raw_to_lerobot(
         "features": {
             "observation.state": {
                 "dtype": "float32",
-                "shape": (44,),
-                "names": [f"motor_{i}" for i in range(44)]
+                "shape": (state_len,),
+                "names": [f"motor_{i}" for i in range(state_len)]
             },
             "action": {
                 "dtype": "float32",
-                "shape": (44,),
-                "names": [f"motor_{i}" for i in range(44)]
+                "shape": (state_len,),
+                "names": [f"motor_{i}" for i in range(state_len)]
             },
             f"annotation.{annotation_source}": {
                 "dtype": "int64",
@@ -464,7 +466,7 @@ def main():
     elif args.embodiment == "so100":
         args.annotation_source = "human.task_description"
     elif args.embodiment == "ergocub":
-        args.annotation_source = "human.coarse_action"
+        args.annotation_source = "human.action.task_description"
     
     if args.recursive:
         # Process a single folder (original behavior)
